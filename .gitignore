@@ -1,1 +1,6 @@
 venv
+*.pyc
+settings.py
+*.json
+*~
+media/temp
