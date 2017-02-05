@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Invoice Generator</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	</head>
+	<body>
+		<div class="page-header">
+			<h1 class="text-center"><a href="#">Invoice Generator</a></h1>
+		</div>
+		<div class="content container">
+			<div class="row">
+				<fieldset style="position: relative; padding-top: 50px; padding-bottom: 10px; border: 2px groove;">		
+					<legend style="position:absolute; top:10px;"> Simple Invoice Template </legend>
+					{% for field in form %}
+						<div class="col-xs-4">{{ field.label }}:</div><div class="col-xs-8"> {{field}} </div>
+					{% endfor %}
+				</fieldset>
+			</div>
+		</div>
+	</body>
+</html>
