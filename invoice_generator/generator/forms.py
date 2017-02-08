@@ -12,9 +12,9 @@ class CompanyInfoForm(forms.Form):
 
 class ItemForm(forms.Form):
     product_name = forms.CharField(max_length=100,
-    	widget=forms.TextInput(
-    		attrs={'placeholder': 'Product name',}
-    		), required=False)
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Product name',}
+            ), required=False)
     quantity = forms.IntegerField(min_value=0)
     unit_price = forms.DecimalField(min_value=0)
 

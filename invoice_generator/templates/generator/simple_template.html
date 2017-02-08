@@ -4,7 +4,6 @@
 	<div class="row">
 		<fieldset style="position: relative; padding-top: 50px; padding-bottom: 10px; border: 2px groove; background-color: white;">
 			<legend style="position:absolute; top:10px;">{% block title %} Simple invoice template {% endblock %}</legend>
-<!-- Template form-->
 			{% block template_head %}
 					{% for field in base_form %}
 						<div class="col-xs-4">{{ field.label }}:</div><div class="col-xs-6"> {{field}} </div>
@@ -25,7 +24,6 @@
 					{% endfor %}
 				</div>
 			{% endblock %}
-			
 			{% block description %}
 				<div class="col-xs-12">
 					<h3>Description</h3>
@@ -38,8 +36,6 @@
 					{% endfor %}
 				</div>
 			{% endblock %}
-<!-- Template form-->
-
 		</fieldset>
 	</div>
 {% endblock %}
