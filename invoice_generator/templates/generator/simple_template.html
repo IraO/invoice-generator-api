@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{{ block.super }}
+{% block content %}
+	<div class="row">
+		<fieldset style="position: relative; padding-top: 50px; padding-bottom: 10px; border: 2px groove; background-color: white;">
+			<legend style="position:absolute; top:10px;">{% block title %} Simple invoice template {% endblock %}</legend>
+<!-- Template form-->
+			{% block template_head %}
+					{% for field in base_form %}
+						<div class="col-xs-4">{{ field.label }}:</div><div class="col-xs-6"> {{field}} </div>
+					{% endfor %}
+			{% endblock %}
+
+			{% block contact_details %}
+				<div class="col-xs-6">
+					<h3>From:</h3>
+					{% for field in sender_company_form %}
+						<div class="col-xs-4">{{ field.label }}:</div><div class="col-xs-8"> {{field}} </div>
+					{% endfor %}
+				</div>
+				<div class="col-xs-6">
+					<h3>BILL TO:</h3>
+					{% for field in receiver_company_form %}
+						<div class="col-xs-4">{{ field.label }}:</div><div class="col-xs-8"> {{field}} </div>
+					{% endfor %}
+				</div>
+			{% endblock %}
+			
+			{% block description %}
+				<div class="col-xs-12">
+					<h3>Description</h3>
+					{% for form in item_formset %}
+						<div class="col-xs-6">
+							{% for field in form %}
+								<div class="col-xs-6">{{ field.label }}:</div><div class="col-xs-2"> {{field}} </div>
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</div>
+			{% endblock %}
+<!-- Template form-->
+
+		</fieldset>
+	</div>
+{% endblock %}
